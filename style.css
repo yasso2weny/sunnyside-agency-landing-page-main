@@ -1,0 +1,622 @@
+/*  (-CSS reset- Credit: Josh Comeau ) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*  CSS Reset End */
+
+:root {
+  --primary-clr: hsl(212, 27%, 19%);
+  --secondary-clr: hsl(232, 10%, 55%);
+
+  --ff-primary: "Fraunces", serif;
+  --ff-secondary: "Barlow", sans-serif;
+}
+
+#mobile-header-container {
+  display: none;
+}
+
+/*--------Header--------*/
+
+.header {
+  height: 100vh;
+  background-image: url("images/desktop/image-header.jpg");
+  background-size: cover;
+  background-position: center;
+
+  position: relative; /* for the Navbar over the header */
+}
+
+/*--------Navigation Bar--------*/
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 20px;
+  padding: 20px 40px;
+  font-weight: 600;
+  font-size: 18px;
+  font-family: "Barlow", sans-serif;
+
+  /* for the Navbar over the header */
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-list {
+  list-style-type: none; /* Remove the list style */
+}
+
+.nav-list .list-item {
+  display: inline-block;
+  padding: 20px 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+#nav-contact {
+  background-color: #ffffff;
+  border-radius: 50px;
+  color: #000000;
+  font-family: "Fraunces", serif;
+  padding: 8px 15px;
+  transition: 0.4s;
+}
+
+#nav-contact:hover {
+  background-color: #6dd1fd;
+  color: white;
+}
+
+/*--------Header Content--------*/
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 200px;
+}
+
+.header-content h1 {
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 5px;
+  font-size: 50px;
+  margin-bottom: 80px;
+}
+
+/*--------Main Grid Container--------*/
+
+#main-grid-container {
+  display: grid;
+  grid-template-rows: repeat(3, 37.5rem);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Item One, Item Four */
+
+#item1,
+#item4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.875rem;
+  margin-inline: 9.375rem;
+  font-family: var(--ff-primary);
+  color: var(--primary-clr);
+}
+
+#item1 h1,
+#item4 h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+#item1 p,
+#item4 p {
+  font-size: 1.125rem;
+  font-family: var(--ff-secondary);
+  color: var(--secondary-clr);
+}
+
+#item1 button,
+#item4 button {
+  position: relative;
+  font-size: 1rem;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--primary-clr);
+}
+
+#item1 button::after,
+#item4 button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: hsl(51, 100%, 49%);
+  border-radius: 1.25rem;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+#item4 button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background-color: hsl(7, 99%, 70%);
+  border-radius: 1.25rem;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+#item1 button:hover:after,
+#item4 button:hover:after {
+  opacity: 1;
+  transition: 0.4s;
+}
+
+/* Item Two and Item Three */
+
+#item2 {
+  background-image: url(images/desktop/image-transform.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#item3 {
+  background-image: url(images/desktop/image-stand-out.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Item Five and Item Six */
+
+#item5 {
+  background-image: url(images/desktop/image-graphic-design.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#item6 {
+  background-image: url(images/desktop/image-photography.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item-5-6-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.375rem;
+  margin-inline: 9.375rem;
+  padding-bottom: 3.125rem;
+  height: 100%;
+  text-align: center;
+  font-family: var(--ff-primary);
+  opacity: 0.6;
+  font-size: 1.25rem;
+}
+
+#item5 p,
+#item6 p {
+  font-family: var(--ff-secondary);
+  font-size: 1.125rem;
+}
+
+/*--------Testimonials--------*/
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 100px 200px 200px 200px;
+}
+
+.testimonials h2 {
+  letter-spacing: 5px;
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  margin-bottom: 100px;
+  color: #919098;
+}
+
+.users {
+  display: flex;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.user img {
+  border-radius: 50px;
+  width: 70px;
+  margin-bottom: 50px;
+}
+
+.user p {
+  font-family: "Barlow", sans-serif;
+  margin-bottom: 50px;
+  line-height: 25px;
+  color: #919098;
+}
+.user h3 {
+  font-family: "Fraunces", serif;
+  margin-bottom: 10px;
+  color: #21303e;
+}
+.user h4 {
+  font-family: "Barlow", sans-serif;
+  color: #919098;
+}
+
+/*--------Images--------*/
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.images-items {
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+}
+
+.img1 {
+  background-image: url("images/desktop/image-gallery-milkbottles.jpg");
+}
+
+.img2 {
+  background-image: url("images/desktop/image-gallery-orange.jpg");
+}
+
+.img3 {
+  background-image: url("images/desktop/image-gallery-cone.jpg");
+}
+
+.img4 {
+  background-image: url("images/desktop/image-gallery-sugarcubes.jpg");
+}
+
+/*--------Footer--------*/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  min-height: 400px;
+  background-color: #90d4c5;
+}
+
+#logo {
+  filter: invert(37%) sepia(6%) saturate(3637%) hue-rotate(117deg)
+    brightness(98%) contrast(83%);
+  margin-bottom: -50px;
+}
+
+.links {
+  display: flex;
+  gap: 50px;
+}
+
+.links a {
+  color: #2c7465;
+  text-decoration: none;
+  font-family: "Barlow", sans-serif;
+  transition: 0.4s;
+}
+
+.links a:hover {
+  color: white;
+}
+
+.social-media {
+  display: flex;
+  gap: 30px;
+}
+
+.social-media img:hover {
+  filter: brightness(0) invert(1);
+  transition: 0.4s;
+}
+
+@media (max-width: 600px) {
+  #mobile-header-container {
+    display: block;
+  }
+
+  .header {
+    display: none;
+  }
+
+  /*--------Mobile Header--------*/
+
+  #mobile-header {
+    height: 100vh;
+    background-image: url("images/desktop/image-header.jpg");
+    background-size: cover;
+    background-position: center;
+
+    position: relative; /* for the Navbar over the header */
+  }
+
+  /*--------Navigation Bar--------*/
+
+  #mobile-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 16px;
+
+    /* for the Navbar over the header */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+
+  /*--------Hamburger Menu Lines--------*/
+
+  #hamburger-menu-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .hamburger-menu-line {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+  }
+
+  /*--------Hamburger Menu--------*/
+
+  #hamburger-menu-container {
+    display: none;
+  }
+
+  #hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+
+    position: absolute;
+    background-color: white;
+    z-index: 10;
+    width: 325px;
+    height: 300px;
+    top: 100px;
+    left: 25px;
+    font-family: var(--ff-secondary);
+    font-size: 20px;
+  }
+
+  #hamburger-menu::before {
+    content: "";
+    position: absolute;
+    left: 90.8%;
+    top: -10%;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid white;
+    border-left: 30px solid transparent;
+  }
+
+  .hm-list-item a {
+    color: grey;
+    text-decoration: none;
+  }
+
+  #hm-nav-contact {
+    background-color: yellow;
+    border-radius: 50px;
+    color: #000000;
+    font-family: "Fraunces", serif;
+    padding: 14px 14px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+
+  #hm-nav-contact:hover {
+    background-color: #6dd1fd;
+    color: white;
+  }
+
+  /*--------Header Content--------*/
+
+  #mobile-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 170px;
+  }
+
+  #mobile-header-content h1 {
+    font-family: "Fraunces", serif;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 5px;
+    line-height: 50px;
+    font-size: 46px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  /*--------Main Grid Container--------*/
+
+  #main-grid-container {
+    grid-template-rows: repeat(auto-fit, 23.4375rem);
+    grid-template-columns: repeat(auto-fit, 23.4375rem);
+  }
+
+  /* Item One, Item Four */
+
+  #item1,
+  #item4 {
+    margin-inline: 0;
+    text-align: center;
+    align-items: center;
+    margin: 1.875rem 3.125rem;
+  }
+
+  /* Item Two and Item Three */
+
+  #item2 {
+    background-image: url(images/mobile/image-transform.jpg);
+    grid-row: 1 / 1;
+    background-position: center;
+  }
+
+  #item3 {
+    background-image: url(images/mobile/image-stand-out.jpg);
+    grid-row: 3 / 4;
+    background-position: center;
+    height: 23.4375rem;
+  }
+
+  /* Item Five and Item Six */
+
+  #item5 {
+    background-image: url(images/mobile/image-graphic-design.jpg);
+    height: 37.5rem;
+  }
+
+  #item6 {
+    background-image: url(images/mobile/image-photography.jpg);
+    height: 37.5rem;
+  }
+
+  .item-5-6-content {
+    margin-inline: 0.875rem;
+    padding-bottom: 3.125rem;
+    font-size: 1.125rem;
+  }
+
+  #item5 p,
+  #item6 p {
+    font-size: 16px;
+  }
+
+  /*--------Testimonials--------*/
+
+  .testimonials {
+    padding: 3.125rem 0;
+    height: auto;
+  }
+
+  .testimonials h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  .users {
+    flex-direction: column;
+  }
+
+  /*--------Images--------*/
+
+  .images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .images-items {
+    min-height: 200px;
+  }
+
+  .img1 {
+    background-image: url("images/mobile/image-gallery-milkbottles.jpg");
+  }
+
+  .img2 {
+    background-image: url("images/mobile/image-gallery-orange.jpg");
+  }
+
+  .img3 {
+    background-image: url("images/mobile/image-gallery-cone.jpg");
+  }
+
+  .img4 {
+    background-image: url("images/mobile/image-gallery-sugar-cubes.jpg");
+  }
+}
